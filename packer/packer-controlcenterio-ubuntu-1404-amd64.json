@@ -198,31 +198,18 @@
   ],
   "provisioners": [
     {
-      "override": {
-          "virtualbox-iso": {
-              "scripts": [
-                "scripts/debian/update.sh",
-                "scripts/common/sshd.sh",
-                "scripts/debian/networking.sh",
-                "scripts/debian/sudoers.sh",
-                "scripts/common/vagrant.sh",
-                "scripts/common/vmtools.sh",
-                "scripts/ubuntu/ansible.sh",
-                "scripts/common/docker.sh"
-              ],
-              "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'"
-        }
-      },
       "scripts": [
         "scripts/debian/update.sh",
         "scripts/common/sshd.sh",
         "scripts/debian/networking.sh",
         "scripts/debian/sudoers.sh",
+        "scripts/common/vagrant.sh",
         "scripts/common/vmtools.sh",
         "scripts/ubuntu/ansible.sh",
         "scripts/common/docker.sh"
       ],
       "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "environment_vars": [ "PACKER_CONTROLCENTERIO_VERSION={{user `packer-controlcenterio_version`}}" ]
     },
     {
@@ -239,6 +226,7 @@
         "scripts/common/minimize.sh"
       ],
       "type": "shell",
+      "execute_command": "echo 'vagrant' | {{.Vars}} sudo -E -S bash '{{.Path}}'",
       "environment_vars": [ "PACKER_CONTROLCENTERIO_VERSION={{user `packer-controlcenterio_version`}}" ]
     }
   ]
