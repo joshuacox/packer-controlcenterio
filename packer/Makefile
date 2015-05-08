@@ -23,28 +23,28 @@ debvbox: builddebianvbox beep
 debvboxdebug: builddebianvboxdebug beep
 
 buildqemudebug:
-	/usr/bin/time -v packer build -debug --only=qemu packer-controlcenterio-ubuntu-1404-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build -debug --only=qemu packer-controlcenterio-ubuntu-1404-amd64.json
 
 buildqemu:
-	/usr/bin/time -v packer build --only=qemu packer-controlcenterio-ubuntu-1404-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build --only=qemu packer-controlcenterio-ubuntu-1404-amd64.json
 
 buildvboxdebug:
-	/usr/bin/time -v packer build -debug --only=virtualbox-iso packer-controlcenterio-ubuntu-1404-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build -debug --only=virtualbox-iso packer-controlcenterio-ubuntu-1404-amd64.json
 
 buildvbox:
-	/usr/bin/time -v packer build --only=virtualbox-iso packer-controlcenterio-ubuntu-1404-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build --only=virtualbox-iso packer-controlcenterio-ubuntu-1404-amd64.json
 
 builddebianqemudebug:
-	/usr/bin/time -v packer build -debug --only=qemu packer-controlcenterio-debian-8.0-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build -debug --only=qemu packer-controlcenterio-debian-8.0-amd64.json
 
 builddebianqemu:
-	/usr/bin/time -v packer build --only=qemu packer-controlcenterio-debian-8.0-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build --only=qemu packer-controlcenterio-debian-8.0-amd64.json
 
 builddebianvboxdebug:
-	/usr/bin/time -v packer build -debug --only=virtualbox-iso packer-controlcenterio-debian-8.0-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build -debug --only=virtualbox-iso packer-controlcenterio-debian-8.0-amd64.json
 
 builddebianvbox:
-	/usr/bin/time -v packer build --only=virtualbox-iso packer-controlcenterio-debian-8.0-amd64.json
+	/usr/bin/time -v nice ionice -c3 packer build --only=virtualbox-iso packer-controlcenterio-debian-8.0-amd64.json
 
 beep:
 	@echo "beep"
