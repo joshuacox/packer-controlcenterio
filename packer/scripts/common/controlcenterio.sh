@@ -5,7 +5,7 @@ sudo apt-get update
 sudo apt-get install -y serviced git
 sudo start serviced
 # tail -f /var/log/upstart/serviced.log
-# netstat -an | grep [:]444443
+# netstat -an | grep [:]443
 # now clone a repo
 # git clone https://gist.github.com/mmaloney/48f3a5b392d03b8e3f53 ~/apptemplate
 # set template id
